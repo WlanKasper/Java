@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/TextView_Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+
+        android:ems="15"
+        android:hint="Status"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/Button_Box_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/TextView_Status"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+
+        android:background="@color/black"
+        android:ems="10"
+        android:text="BOX 1" />
+
+    <Button
+        android:id="@+id/Button_Box_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/Button_Box_1"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+
+        android:background="@color/black"
+        android:ems="10"
+        android:text="BOX 2" />
+
+    <TextView
+        android:id="@+id/TextView_Box_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/TextView_Status"
+        android:layout_marginStart="200sp"
+        android:layout_marginTop="30sp"
+
+        android:ems="3"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/TextView_Box_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/TextView_Box_1"
+        android:layout_marginStart="200sp"
+        android:layout_marginTop="40sp"
+
+
+        android:ems="3"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/TextView_Status"
+        android:layout_marginStart="290sp"
+        android:layout_marginTop="30sp"
+
+        android:text="Pfizer, Moderna"
+
+        android:ems="6"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/TextView_Box_1"
+        android:layout_marginStart="290sp"
+        android:layout_marginTop="40sp"
+
+        android:text="Pfizer, Sputnik"
+
+        android:ems="6"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/Button_AddNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/Button_Box_2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40sp"
+
+        android:background="@color/black"
+        android:ems="8"
+        android:text="Add"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/EditText_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/Button_AddNew"
+        android:layout_marginStart="40sp"
+        android:layout_marginTop="20sp"
+
+        android:ems="6"
+        android:hint="Name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/EditText_Lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/Button_AddNew"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="40sp"
+
+        android:ems="6"
+        android:hint="Lastname"
+        android:inputType="text" />
+
+    <CheckBox
+        android:id="@+id/CheckBox_Moderna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/EditText_Lastname"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+
+        android:text="Moderna" />
+
+    <CheckBox
+        android:id="@+id/CheckBox_Pfizer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/EditText_Lastname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="150sp"
+        android:layout_marginTop="20sp"
+
+        android:text="Pfizer" />
+
+    <CheckBox
+        android:id="@+id/CheckBox_SputnikV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/EditText_Lastname"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20sp"
+        android:layout_marginRight="20sp"
+
+        android:text="Sputnik" />
+
+    <TextView
+        android:id="@+id/TextView_Queue"
+        android:layout_width="wrap_content"
+        android:layout_height="234dp"
+
+        android:layout_below="@id/CheckBox_Pfizer"
+        android:layout_marginTop="40sp"
+
+        android:ems="15"
+        android:text="QUEUE"
+        android:textSize="8sp" />
+
+    <Button
+        android:id="@+id/Button_GoNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/CheckBox_Pfizer"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="80sp"
+        android:layout_marginRight="40sp"
+
+        android:background="@color/black"
+        android:ems="10"
+        android:text="Go Next" />
+
+
+</RelativeLayout>
