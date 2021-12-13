@@ -1,15 +1,13 @@
 package WlanKasper.com.Space_Invaders.Threads;
 
 import WlanKasper.com.Space_Invaders.Objects.SpaceShip;
+import WlanKasper.com.Space_Invaders.SpaceInvaders_Frame;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.CyclicBarrier;
 
 public class SpaceShip_Battalion {
     private ArrayList<SpaceShip_Alien> battalion;
-    private final CyclicBarrier gate = new CyclicBarrier(27);
 
     public SpaceShip_Battalion () {
         battalion = new ArrayList<>();
@@ -33,7 +31,7 @@ public class SpaceShip_Battalion {
                 x += SpaceShip.SPACESHIP_WIDTH + 50;
             }
 
-            SpaceShip_Alien spaceShip_alien = new SpaceShip_Alien(x, y, id,this, gate);
+            SpaceShip_Alien spaceShip_alien = new SpaceShip_Alien(x, y, id,this);
             spaceShip_alien.start();
             addNewSpaceShip_Alien(spaceShip_alien);
         }
@@ -62,7 +60,9 @@ public class SpaceShip_Battalion {
         for (SpaceShip_Alien ship : battalion) {
             ship.getSpaceShip().setXDirection(ship.getSpaceShip().xVelocity * -1);
             ship.getSpaceShip().moveDown();
+            if (ship.getSpaceShip().y > SpaceInvaders_Frame.GAME_HEIGHT) {
+                killSpaceShip(ship);
+            }
         }
     }
-
 }

@@ -2,40 +2,53 @@ package WlanKasper.com.Space_Invaders.Threads;
 
 import WlanKasper.com.Space_Invaders.Objects.Rocket;
 import WlanKasper.com.Space_Invaders.Objects.SpaceShip;
+import WlanKasper.com.Space_Invaders.SpaceInvaders_Frame;
 
 import java.awt.*;
 import java.util.ArrayList;
 
 public class Rocket_List {
 
-    private ArrayList<SpaceShip_Rocket> rocketList;
-    private SpaceShip_Rocket rocket;
+    private final ArrayList<SpaceShip_Rocket> rocketListPlayer;
+    private final ArrayList<SpaceShip_Rocket> rocketListAlien;
 
     public Rocket_List () {
-        rocketList = new ArrayList<>();
+        rocketListPlayer = new ArrayList<>();
+        rocketListAlien = new ArrayList<>();
     }
 
-    public void addNewRocket(SpaceShip spaceShip){
-        rocket = new SpaceShip_Rocket(spaceShip);
+    public void addNewPlayerRocket (SpaceShip spaceShip){
+        SpaceShip_Rocket rocket = new SpaceShip_Rocket(spaceShip);
+        rocket.setDirection(-10);
         rocket.start();
-        rocketList.add(rocket);
+        rocketListPlayer.add(rocket);
+    }
+
+    public void addNewAlienRocket (SpaceShip spaceShip){
+        SpaceShip_Rocket rocket = new SpaceShip_Rocket(spaceShip);
+        rocket.setDirection(10);
+        rocket.start();
+        rocketListAlien.add(rocket);
     }
 
     public void draw(Graphics g){
-        for (SpaceShip_Rocket elem: rocketList) {
+        for (SpaceShip_Rocket elem: rocketListPlayer) {
+            elem.drawRocket(g);
+        }
+        for (SpaceShip_Rocket elem: rocketListAlien) {
             elem.drawRocket(g);
         }
     }
 
-    public SpaceShip_Alien isShot (ArrayList<SpaceShip_Alien> shipList) {
+    public SpaceShip_Alien isShotAlien (ArrayList<SpaceShip_Alien> shipList) {
         for (SpaceShip_Alien alien: shipList) {
-            for (SpaceShip_Rocket rocket: rocketList) {
+            for (SpaceShip_Rocket rocket: rocketListPlayer) {
                 if (rocket.getRocket().intersects(alien.getSpaceShip())) {
                     alien.interrupt();
                     shipList.remove(alien);
 
                     rocket.interrupt();
-                    rocketList.remove(rocket);
+                    rocketListPlayer.remove(rocket);
                     return alien;
                 }
             }
@@ -43,13 +56,28 @@ public class Rocket_List {
         return null;
     }
 
+    public SpaceShip_Player isShotPlayer (SpaceShip_Player ship) {
+        for (SpaceShip_Rocket rocket: rocketListAlien) {
+            if (rocket.getRocket().intersects(ship.getSpaceShip())) {
 
-    class SpaceShip_Rocket extends Thread {
+                rocket.interrupt();
+                rocketListAlien.remove(rocket);
+                return ship;
+            }
+        }
+        return null;
+    }
+
+
+    static class SpaceShip_Rocket extends Thread {
         private final Rocket rocket;
 
         public SpaceShip_Rocket (SpaceShip spaceShip) {
             rocket = new Rocket(spaceShip.x - (Rocket.ROCKET_DIAMETER / 2), spaceShip.y - Rocket.ROCKET_DIAMETER);
-            rocket.setYDirection(-10);
+        }
+
+        public void setDirection (int direct){
+            rocket.setYDirection(direct);
         }
 
         @Override
@@ -72,7 +100,7 @@ public class Rocket_List {
         }
 
         public void checkBoards () {
-            if (rocket.y < 0) {
+            if (rocket.y < 0 || rocket.y > SpaceInvaders_Frame.GAME_HEIGHT) {
                 rocket.delete();
                 this.interrupt();
             }

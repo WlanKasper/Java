@@ -15,11 +15,6 @@ public class SpaceShip extends Rectangle {
         this.id = id;
     }
 
-    // ---------- Delete SpaceShip ----------
-    public void delete () {
-        super.setSize(0, 0);
-    }
-
     // ---------- Set Direction of SpaceShip ----------
     public void setXDirection (int xDirection) {
         xVelocity = xDirection;

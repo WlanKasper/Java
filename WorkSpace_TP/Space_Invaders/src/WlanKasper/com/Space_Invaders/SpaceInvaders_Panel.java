@@ -10,7 +10,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.concurrent.CyclicBarrier;
 
 public class SpaceInvaders_Panel extends JPanel implements Runnable {
 
@@ -42,6 +41,9 @@ public class SpaceInvaders_Panel extends JPanel implements Runnable {
         mainThread = new Thread(this);
         mainThread.start();
 
+        RocketTimer rocketTimer = new RocketTimer();
+        rocketTimer.start();
+
         createNewSpaceShip_Player();
     }
 
@@ -50,8 +52,8 @@ public class SpaceInvaders_Panel extends JPanel implements Runnable {
         spaceShip_player.start();
     }
 
-    public void createNewSpaceShip_Rocket () {
-        rocketList.addNewRocket(spaceShip_player.getSpaceShip());
+    public void createNewPlayer_Rocket () {
+        rocketList.addNewPlayerRocket(spaceShip_player.getSpaceShip());
     }
 
     @Override
@@ -60,6 +62,7 @@ public class SpaceInvaders_Panel extends JPanel implements Runnable {
             try {
                 Thread.sleep(10);
                 checkShots();
+                checkScore();
                 repaint();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -88,9 +91,24 @@ public class SpaceInvaders_Panel extends JPanel implements Runnable {
     }
 
     public void checkShots () {
-        SpaceShip_Alien temp = rocketList.isShot(spaceShip_battalion.getSpaceShips());
+        SpaceShip_Alien temp = rocketList.isShotAlien(spaceShip_battalion.getSpaceShips());
         if (rocketList != null && temp != null) {
             spaceInvaders_score.player++;
+        }
+        SpaceShip_Player temp2 = rocketList.isShotPlayer(spaceShip_player);
+        if (rocketList != null && temp2 != null){
+            spaceInvaders_score.computer++;
+        }
+    }
+
+    public void checkScore(){
+        if (spaceInvaders_score.player > 26) {
+            spaceInvaders_score.isRunning = 2;
+            mainThread.interrupt();
+        }
+        if (spaceInvaders_score.computer > 10){
+            spaceInvaders_score.isRunning = 0;
+            mainThread.interrupt();
         }
     }
 
@@ -104,7 +122,7 @@ public class SpaceInvaders_Panel extends JPanel implements Runnable {
                 spaceShip_player.pressedRight();
             }
             if (e.getKeyCode() == KeyEvent.VK_W) {
-                createNewSpaceShip_Rocket();
+                createNewPlayer_Rocket();
             }
         }
 
@@ -115,6 +133,22 @@ public class SpaceInvaders_Panel extends JPanel implements Runnable {
             }
             if (e.getKeyCode() == KeyEvent.VK_D) {
                 spaceShip_player.releasedRight();
+            }
+        }
+    }
+
+    class RocketTimer extends Thread {
+        @Override
+        public void run () {
+            while (true) {
+                try {
+                    Thread.sleep(250);
+                    int idx = (int) ( Math.random() * spaceShip_battalion.getSpaceShips().size() );
+                    rocketList.addNewAlienRocket(spaceShip_battalion.getSpaceShips().get(idx).getSpaceShip());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
             }
         }
     }
