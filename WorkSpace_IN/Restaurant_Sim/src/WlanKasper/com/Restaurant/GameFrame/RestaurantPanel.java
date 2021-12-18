@@ -1,7 +1,7 @@
 package WlanKasper.com.Restaurant.GameFrame;
 
+import WlanKasper.com.Restaurant.List.ClientList;
 import WlanKasper.com.Restaurant.Objects.Client;
-import WlanKasper.com.Restaurant.Objects.List.ClientList;
 import WlanKasper.com.Restaurant.Objects.Muslim;
 import WlanKasper.com.Restaurant.Objects.Omnivorous;
 import WlanKasper.com.Restaurant.Objects.Vegan;
