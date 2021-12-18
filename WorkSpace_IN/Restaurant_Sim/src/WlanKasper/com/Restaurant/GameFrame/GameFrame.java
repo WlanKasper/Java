@@ -12,7 +12,7 @@ public class GameFrame extends JFrame {
         this.add(restaurantPanel);
         this.setTitle("Restaurant");
         this.setResizable(false);
-        this.setBackground(Color.black);
+        this.setBackground(Color.gray);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setVisible(true);
