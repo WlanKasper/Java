@@ -10,3 +10,4 @@ rootProject.name = "Person_List"
 include ':Person_List'
 include ':Verifica_2'
 include ':Recursion'
+include ':contacts'

@@ -13,7 +13,7 @@ public class RestFrame extends JFrame {
     public RestFrame () {
         restPanel = new RestPanel();
         this.add(restPanel);
-        this.setTitle("Space Invaders");
+        this.setTitle("Restaurant");
         this.setResizable(false);
         this.setBackground(Color.white);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

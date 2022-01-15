@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50sp"
+
+        android:hint="Введите Фамилию и Имя"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/inputNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/inputText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+
+        android:hint="Введите Номер телефона"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/inputNumber"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="20sp"
+
+        android:text="ADD NEW" />
+
+    <Button
+        android:id="@+id/find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/inputNumber"
+        android:layout_marginStart="250sp"
+        android:layout_marginTop="20sp"
+
+        android:text="FIND" />
+
+    <TextView
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+
+        android:layout_below="@id/find"
+        android:layout_marginStart="40sp"
+        android:layout_marginTop="50sp"
+        android:ems="20" />
+</RelativeLayout>
