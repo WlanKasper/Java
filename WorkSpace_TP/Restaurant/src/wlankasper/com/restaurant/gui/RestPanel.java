@@ -1,5 +1,7 @@
 package wlankasper.com.restaurant.gui;
 
+import wlankasper.com.restaurant.objects.ClientList;
+import wlankasper.com.restaurant.objects.TableList;
 import wlankasper.com.restaurant.threads.Chef;
 import wlankasper.com.restaurant.threads.Waiter;
 
@@ -11,10 +13,11 @@ public class RestPanel extends JPanel implements Runnable {
     private static final Dimension SCREEN_SIZE = new Dimension(RestFrame.RESTAURANT_WIDTH, RestFrame.RESTAURANT_HEIGHT);
 
     Thread mainThread;
-    Chef chef;
-    Waiter waiter;
 
     RestWalls walls;
+
+    ClientList clientList;
+    TableList tableList;
 
     Image image;
     Graphics graphics;
@@ -30,18 +33,23 @@ public class RestPanel extends JPanel implements Runnable {
         mainThread = new Thread(this);
         mainThread.start();
 
-        chef = new Chef();
-        chef.start();
-
-        waiter = new Waiter();
-        waiter.start();
+        clientList = new ClientList();
+        tableList = new TableList();
 
         walls = new RestWalls();
+
+        tableList.intiTables();
+        clientList.initClients(tableList.getTableList());
     }
 
     @Override
     public void run () {
         while (isRun) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             repaint();
         }
     }
@@ -54,9 +62,10 @@ public class RestPanel extends JPanel implements Runnable {
     }
 
     public void draw (Graphics g) {
-        chef.draw(g);
-        waiter.draw(g);
         walls.draw(g);
+        clientList.draw(g);
+        tableList.draw(g);
+
         Toolkit.getDefaultToolkit().sync();
     }
 }
