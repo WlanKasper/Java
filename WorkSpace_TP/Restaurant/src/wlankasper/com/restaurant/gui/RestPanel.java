@@ -2,8 +2,6 @@ package wlankasper.com.restaurant.gui;
 
 import wlankasper.com.restaurant.objects.ClientList;
 import wlankasper.com.restaurant.objects.TableList;
-import wlankasper.com.restaurant.threads.Chef;
-import wlankasper.com.restaurant.threads.Waiter;
 
 import javax.swing.*;
 import java.awt.*;
