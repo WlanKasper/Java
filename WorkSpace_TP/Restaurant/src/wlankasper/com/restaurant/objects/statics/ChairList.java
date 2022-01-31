@@ -3,26 +3,26 @@ package wlankasper.com.restaurant.objects;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class ClientList extends Rectangle {
+public class ChairList {
 
     private static final int INDENT = 10;
 
-    ArrayList<Client> clientList;
+    ArrayList<Chair> clientList;
 
-    public ClientList () {
+    public ChairList() {
         clientList = new ArrayList<>();
     }
 
     public void draw (Graphics g) {
         if (!clientList.isEmpty()) {
-            for (Client client : clientList) {
+            for (Chair client : clientList) {
                 client.draw(g);
             }
         }
     }
 
 
-    public void addClient (Client client) {
+    public void addClient (Chair client) {
         clientList.add(client);
     }
 
@@ -31,42 +31,42 @@ public class ClientList extends Rectangle {
     }
 
     public void initClients (ArrayList<TableList.Table> tableList) {
-        Client client;
+        Chair client;
         int i = 0;
         for (TableList.Table table : tableList) {
             // Верхний
-            client = new Client(table.x + (table.width / 4), table.y - (table.height / 2) - INDENT, i);
+            client = new Chair(table.x + (table.width / 4), table.y - (table.height / 2) - INDENT, i);
             clientList.add(client);
             i++;
 
             // Нижний
-            client = new Client(table.x + (table.width / 4), table.y + (table.height) + INDENT, i);
+            client = new Chair(table.x + (table.width / 4), table.y + (table.height) + INDENT, i);
             clientList.add(client);
             i++;
 
             // Левый
-            client = new Client(table.x - client.width - INDENT, table.y + (table.height / 4), i);
+            client = new Chair(table.x - client.width - INDENT, table.y + (table.height / 4), i);
             clientList.add(client);
             i++;
 
             // Правый
-            client = new Client(table.x + table.width + INDENT, table.y + (table.height / 4), i);
+            client = new Chair(table.x + table.width + INDENT, table.y + (table.height / 4), i);
             clientList.add(client);
             i++;
         }
     }
 
-    public ArrayList<Client> getClientList () {
+    public ArrayList<Chair> getClientList () {
         return clientList;
     }
 
-    public class Client extends Rectangle {
+    public class Chair extends Rectangle {
         public static final int WIDTH = 50;
         public static final int HEIGHT = 50;
 
         private final int id;
 
-        public Client (int x, int y, int id) {
+        public Chair(int x, int y, int id) {
             super(x, y, WIDTH, HEIGHT);
             this.id = id;
         }

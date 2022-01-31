@@ -18,7 +18,7 @@ public class TableList {
         }
     }
 
-    public void addTabele (Table table){
+    public void addTable(Table table){
         tableList.add(table);
     }
 
@@ -42,7 +42,7 @@ public class TableList {
                 }
             }
             Table table = new Table(xPos, yPos, i);
-            addTabele(table);
+            addTable(table);
         }
     }
 
