@@ -1,4 +1,6 @@
-package wlankasper.com.restaurant.objects;
+package wlankasper.com.restaurant.objects.threads;
+
+import wlankasper.com.restaurant.objects.StandardGraphicsObject;
 
 import java.awt.*;
 
@@ -19,43 +21,17 @@ public class WaiterThread extends Thread {
     }
 }
 
-class Waiter extends Rectangle {
+class Waiter extends StandardGraphicsObject {
     public static final int WIDTH = 50;
     public static final int HEIGHT = 50;
 
-    private int xVelocity;
-    private int yVelocity;
-
-    private final int id;
-
-    public Waiter(int xPos, int yPos, int id) {
-        super(xPos, yPos, WIDTH, HEIGHT);
-        this.id = id;
+    public Waiter(int x, int y, int id) {
+        super(x, y, WIDTH, HEIGHT, id);
     }
 
-    public void draw (Graphics g) {
-        g.setColor(Color.blue);
+    @Override
+    public void draw(Graphics g) {
+        g.setColor(Color.yellow);
         g.fillOval(x, y, width, height);
-
-        g.setColor(Color.white);
-        g.setFont(new Font("Consolas", Font.PLAIN, 10));
-        g.drawString("Waiter", x + (WIDTH / 2), y + (HEIGHT / 2));
-    }
-
-    public void setXDirection(int xDirection) {
-        xVelocity = xDirection;
-    }
-
-    public void setYDirection(int yDirection) {
-        yVelocity = yDirection;
-    }
-
-    public void move() {
-        x = x + xVelocity;
-        y = y + yVelocity;
-    }
-
-    public int getId() {
-        return id;
     }
 }

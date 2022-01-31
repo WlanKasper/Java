@@ -1,4 +1,6 @@
-package wlankasper.com.restaurant.objects;
+package wlankasper.com.restaurant.objects.statics;
+
+import wlankasper.com.restaurant.objects.StandardGraphicsObject;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -60,25 +62,12 @@ public class ChairList {
         return clientList;
     }
 
-    public class Chair extends Rectangle {
+    public class Chair extends StandardGraphicsObject {
         public static final int WIDTH = 50;
         public static final int HEIGHT = 50;
 
-        private final int id;
-
         public Chair(int x, int y, int id) {
-            super(x, y, WIDTH, HEIGHT);
-            this.id = id;
-        }
-
-        public void draw (Graphics g) {
-            g.setColor(Color.gray);
-            g.fillRect(x, y, width, height);
-        }
-
-
-        public int getId() {
-            return id;
+            super(x, y, WIDTH, HEIGHT, id);
         }
     }
 }
