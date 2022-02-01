@@ -10,11 +10,13 @@ public class MyData {
         myArray = new ArrayList<>();
     }
 
-    public void addElement (double number) {
-        myArray.add(number);
+    public void addNRandomElements(int num) {
+        for (int i = 0; i < num; i++) {
+            myArray.add(Math.random() * 1000000);
+        }
     }
 
-    public double[] getArray () {
+    public double[] getArray() {
         int size = myArray.size();
         double[] tempArray = new double[size];
         for (int i = 0; i < size; i++) {
@@ -26,6 +28,6 @@ public class MyData {
 
     @Override
     public String toString() {
-        return  "{ Data = " + myArray + " }";
+        return "{ Data = " + myArray + " }";
     }
 }

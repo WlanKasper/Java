@@ -12,7 +12,7 @@ public class SelectionSort extends AlgorithmsPattern {
    */
 
     public SelectionSort(double[] copyArray) {
-        super(copyArray);
+        super(copyArray, "SelectionSort");
     }
 
     @Override

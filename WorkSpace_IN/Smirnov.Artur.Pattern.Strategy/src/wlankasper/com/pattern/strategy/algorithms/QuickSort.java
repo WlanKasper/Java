@@ -12,7 +12,7 @@ public class QuickSort extends AlgorithmsPattern {
 */
 
     public QuickSort(double[] copyArray) {
-        super(copyArray);
+        super(copyArray, "QuickSort");
     }
 
     @Override
