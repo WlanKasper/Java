@@ -14,6 +14,10 @@
             <option value="$PROJECT_DIR$/Recursion" />
             <option value="$PROJECT_DIR$/Verifica_2" />
             <option value="$PROJECT_DIR$/contacts" />
+            <option value="$PROJECT_DIR$/cronometro" />
+            <option value="$PROJECT_DIR$/stopwatch" />
+            <option value="$PROJECT_DIR$/timer" />
+            <option value="$PROJECT_DIR$/wordle" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

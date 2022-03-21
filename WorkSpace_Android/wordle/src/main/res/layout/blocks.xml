@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="100sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:background="@color/black"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:showIn="@layout/activity_main">
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/c0"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c1"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c2"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c3"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c4"
+            style="@style/std_text_block" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/c5"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c6"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c7"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c8"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c9"
+            style="@style/std_text_block" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/c10"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c11"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c12"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c13"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c14"
+            style="@style/std_text_block" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/c15"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c16"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c17"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c18"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c19"
+            style="@style/std_text_block" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/c20"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c21"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c22"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c23"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c24"
+            style="@style/std_text_block" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/c25"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c26"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c27"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c28"
+            style="@style/std_text_block" />
+
+        <TextView
+            android:id="@+id/c29"
+            style="@style/std_text_block" />
+    </TableRow>
+</TableLayout>
