@@ -7,11 +7,12 @@ import wlankasper.com.restaurant.objects.threads.ChefThread;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Locale;
 
 public class RestPanel extends JPanel implements Runnable {
 
     private static final Dimension SCREEN_SIZE = new Dimension(RestFrame.RESTAURANT_WIDTH, RestFrame.RESTAURANT_HEIGHT);
-
+    // Можно попробовать конвертировать в img и отправить на рендер
     Thread mainThread;
 
     RestWalls walls;

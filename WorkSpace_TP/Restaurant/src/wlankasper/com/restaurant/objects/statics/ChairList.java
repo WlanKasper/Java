@@ -67,7 +67,7 @@ public class ChairList {
         public static final int HEIGHT = 50;
 
         public Chair(int x, int y, int id) {
-            super(x, y, WIDTH, HEIGHT, id);
+            super(x, y, WIDTH, HEIGHT,1, id);
         }
     }
 }

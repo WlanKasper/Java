@@ -5,9 +5,12 @@
       <module fileurl="file://$PROJECT_DIR$/Carte/Carte.iml" filepath="$PROJECT_DIR$/Carte/Carte.iml" />
       <module fileurl="file://$PROJECT_DIR$/Restaurant_Sim/Restaurant_Sim.iml" filepath="$PROJECT_DIR$/Restaurant_Sim/Restaurant_Sim.iml" />
       <module fileurl="file://$PROJECT_DIR$/Smirnov.Artur.Patter.Strategy/Smirnov.Artur.Patter.Strategy.iml" filepath="$PROJECT_DIR$/Smirnov.Artur.Patter.Strategy/Smirnov.Artur.Patter.Strategy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Smirnov.Artur.Pattern.State.Chronometro/Smirnov.Artur.Pattern.State.Chronometro.iml" filepath="$PROJECT_DIR$/Smirnov.Artur.Pattern.State.Chronometro/Smirnov.Artur.Pattern.State.Chronometro.iml" />
       <module fileurl="file://$PROJECT_DIR$/Smirnov.Artur.Pattern.Strategy/Smirnov.Artur.Pattern.Strategy.iml" filepath="$PROJECT_DIR$/Smirnov.Artur.Pattern.Strategy/Smirnov.Artur.Pattern.Strategy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TDD/TDD.iml" filepath="$PROJECT_DIR$/TDD/TDD.iml" />
       <module fileurl="file://$PROJECT_DIR$/Verifica3/Verifica3.iml" filepath="$PROJECT_DIR$/Verifica3/Verifica3.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/WorkSpace_IN.iml" filepath="$PROJECT_DIR$/.idea/WorkSpace_IN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/db_sql_using/db_sql_using.iml" filepath="$PROJECT_DIR$/db_sql_using/db_sql_using.iml" />
     </modules>
   </component>
 </project>

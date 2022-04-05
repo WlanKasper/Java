@@ -59,7 +59,7 @@ public class TableList {
         public static int HEIGHT = 100;
 
         public Table(int x, int y, int id) {
-            super(x, y, WIDTH, HEIGHT, id);
+            super(x, y, WIDTH, HEIGHT, 1,id);
         }
 
         @Override

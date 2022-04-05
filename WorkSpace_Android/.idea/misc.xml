@@ -8,7 +8,7 @@
         <entry key="stopwatch/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="timer/src/main/res/layout/activity_main.xml" value="0.2420754031858583" />
         <entry key="wordle/src/main/res/layout/activity_main.xml" value="0.32914428710937504" />
-        <entry key="wordle/src/main/res/layout/blocks.xml" value="0.2953125" />
+        <entry key="wordle/src/main/res/layout/blocks.xml" value="0.1" />
         <entry key="wordle/src/main/res/layout/info_dialog.xml" value="0.1" />
       </map>
     </option>

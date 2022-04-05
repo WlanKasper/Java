@@ -2316,4 +2316,12 @@ zebra
 zesty
 zonal</string>
     <string name="wordle_wlankasper">Wordle @WlanKasper</string>
+    <string name="how_to_play">HOW TO PLAY</string>
+    <string name="guess_the_wordle_in_six_tries_each_guess_must_be_a_valid_five_letter_word_hit_the_enter_button_to_submit_after_each_guess_the_color_of_the_tiles_will_change_to_show_how_close_your_guess_was_to_the_word">Guess the WORDLE in six tries. Each guess must be a valid five-letter word. Hit the enter button to submit. After each guess, the color of the tiles will change to show how close your guess was to the word.</string>
+    <string name="examples">Examples</string>
+    <string name="the_letter_w_is_in_the_word_and_in_the_correct_spot">The letter W is in the word and in the correct spot.</string>
+    <string name="the_letter_i_is_in_the_word_but_in_the_wrong_spot">The letter I is in the word but in the wrong spot.</string>
+    <string name="the_letter_u_is_not_in_the_word_in_any_spot">The letter U is not in the word in any spot.</string>
+    <string name="a_new_wordle_will_be_available_each_day">A new WORDLE will be available each day!</string>
+    <string name="start">Start</string>
 </resources>

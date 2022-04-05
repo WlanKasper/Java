@@ -21,13 +21,21 @@ public class PlateThread extends Thread {
         plate.draw(g);
     }
 
+    public int getPositionX () {
+        return plate.x;
+    }
+
+    public int getPositionY () {
+        return plate.y;
+    }
+
     class Plate extends StandardGraphicsObject {
 
         public static final int WIDTH = 25;
         public static final int HEIGHT = 25;
 
         public Plate(int x, int y, int id) {
-            super(x, y, WIDTH, HEIGHT, id);
+            super(x, y, WIDTH, HEIGHT,0, id);
         }
 
         @Override

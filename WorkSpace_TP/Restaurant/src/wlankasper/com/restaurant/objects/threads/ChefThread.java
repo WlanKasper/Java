@@ -6,29 +6,30 @@ import java.awt.*;
 
 public class ChefThread extends Thread {
 
-    private static final int windowX = 1000;
-    private static final int windowY = 400;
+    private static final int[] WINDOW = {1000, 400};
+    private static final int[] STOVE = {850, 650};
 
-    Chef chef = null;
-    int sleepTime = 100;
+    Chef chef;
+    int sleepTime = 10;
 
     public ChefThread() {
         chef = new Chef(1100, 600, 0);
-        takePlate();
+        cook();
     }
 
     @Override
     public void run() {
         super.run();
-        while (this.isAlive()) {
+        while (true) {
             try {
                 sleep(sleepTime);
+
+                chef.move();
+                chef.checkStatus();
+                checkCollins();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            sleepTime = 100;
-            chef.move();
-            checkCollins();
         }
     }
 
@@ -36,28 +37,42 @@ public class ChefThread extends Thread {
         chef.draw(g);
     }
 
-    public void checkCollins(){
-        if (chef.x >= 1200 - chef.width || chef.x <= 800){
-            chef.setXDirection(-chef.xDirection);
-            sleepTime = 2000;
+    // переделать на достижение точек
+    public void checkCollins() {
+        if (isAround(chef.x, chef.y, WINDOW[0], WINDOW[1], 10)) {
+            chef.setXDirection(0);
+            chef.setYDirection(0);
         }
-        if (chef.y >= 700- chef.width || chef.y <= 400){
-            chef.setYDirection(-chef.yDirection);
-            sleepTime = 2000;
+
+        if (isAround(chef.x, chef.y, STOVE[0], STOVE[1], 10)) {
+            chef.setXDirection(0);
+            chef.setYDirection(0);
         }
     }
 
-    public void takePlate () {
-        chef.goTo(windowX-5, windowY-5);
+    public void takePlate() {
+        chef.goTo(WINDOW[0], WINDOW[1]);
     }
+
+    public void cook() {
+        chef.goTo(STOVE[0], STOVE[1]);
+        chef.isCooking = true;
+    }
+
+    public boolean isAround(int x1, int y1, int x2, int y2, int radius) {
+        return (x1 > x2 + radius || x1 < x2 - radius) && (y1 > y2 + radius || y1 < y2 - radius);
+    }
+
 }
 
 class Chef extends StandardGraphicsObject {
     public static int WIDTH = 50;
     public static int HEIGHT = 50;
 
+    public boolean isCooking = false;
+
     public Chef(int x, int y, int id) {
-        super(x, y, WIDTH, HEIGHT, id);
+        super(x, y, WIDTH, HEIGHT, 1, id);
     }
 
     @Override
